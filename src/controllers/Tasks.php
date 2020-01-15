@@ -107,7 +107,7 @@ class Tasks extends Base
             ->execute([
                 $data['description'],
                 array_key_exists('completed', $data) && $data['completed'] ? 1 : 0,
-                strcmp($task['description'], $data['description']) !== 0 ? 1 : 0,
+                strcmp($task['description'], $data['description']) !== 0 ? 1 : $task['updated'],
                 $arguments['id']
             ]);
 
